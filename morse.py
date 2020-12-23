@@ -10,18 +10,35 @@ Pause between characters inside a word – is 3 time units long.
 Pause between words – is 7 time units long.
 """
 __author__ = 'kamela williamson'
+# used code from first morse code assessment
 
 from morse_dict import MORSE_2_ASCII
 
 
 def decode_bits(bits):
     # your code here
-    return
+    pass
 
 
 def decode_morse(morse):
     # your code here
-    return
+    MORSE_2_ASCII
+    # your code here
+    # strip takes out trailing. spaces in front and back
+    morse = morse.strip()
+    # splitting by 3 spaces. each word we split is by 3 spaces
+    words_list = morse.split("   ")
+    w_translate = []
+    for word in words_list:
+        letter_list = word.split(" ")
+        l_translate = []
+        for letter in letter_list:
+            translate = MORSE_2_ASCII[letter]
+            l_translate.append(translate)
+        w_translate.append("".join(l_translate))
+    result = " ".join(w_translate)
+
+    return result
 
 
 if __name__ == '__main__':
