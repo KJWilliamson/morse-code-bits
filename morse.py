@@ -34,17 +34,15 @@ from morse_dict import MORSE_2_ASCII
 
 def decode_bits(bits):
     # your code here
-    # str = ""
     bits = bits.strip('0')
     # find the least amount of times that 0 or 1 comes up
     tm = min(len(mc) for mc in re.findall(r'1+|0+', bits))
-    i = bits[::tm].replace('111', '-').replace('1', '.').replace('0000000', '   ').replace('000', ' ').replace('0', '')
-    return i
+    str = bits[::tm].replace('111', '-').replace('1', '.').replace(
+        '0000000', '   ').replace('000', ' ').replace('0', '')
+    return str
 
 
 def decode_morse(morse):
-    # your code here
-    MORSE_2_ASCII
     # your code here
     # strip takes out trailing. spaces in front and back
     morse = morse.strip()
