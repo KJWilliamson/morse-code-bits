@@ -38,27 +38,18 @@ def decode_bits(bits):
     # find the least amount of times that 0 or 1 comes up
     tm = min(len(mc) for mc in re.findall(r'1+|0+', bits))
     str = bits[::tm].replace('111', '-').replace('1', '.').replace(
-        '0000000', '   ').replace('000', ' ').replace('0', '')
+          '0000000', '   ').replace('000', ' ').replace('0', '')
     return str
 
 
 def decode_morse(morse):
-    # your code here
-    # strip takes out trailing. spaces in front and back
-    morse = morse.strip()
-    # splitting by 3 spaces. each word we split is by 3 spaces
-    words_list = morse.split("   ")
     w_translate = []
-    for word in words_list:
-        letter_list = word.split(" ")
-        l_translate = []
-        for letter in letter_list:
-            translate = MORSE_2_ASCII[letter]
-            l_translate.append(translate)
-        w_translate.append("".join(l_translate))
-    result = " ".join(w_translate)
-
-    return result
+    for morse_word in morse.split('   '):
+        word = ''.join(MORSE_2_ASCII.get(morse_char, '')
+                       for morse_char in morse_word.split(' '))
+        if word:
+            w_translate.append(word)
+    return ' '.join(w_translate)
 
 
 if __name__ == '__main__':
