@@ -15,6 +15,7 @@ __author__ = 'kamela williamson'
 # used code from first morse code assessment
 # rewatched Daniels' morse code demo
 # did the morse code advanced on codewars
+# flake8 wasn't passing because i wasn't on the right path
 # https://www.geeksforgeeks.org/python-regex-re-search-vs-re-findall/
 # https://www.w3schools.com/python/python_regex.asp
 # https://www.w3schools.com/python/ref_string_strip.asp
