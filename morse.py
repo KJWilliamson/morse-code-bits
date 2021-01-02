@@ -11,6 +11,7 @@ Pause between words – is 7 time units long.
 """
 __author__ = 'kamela williamson'
 # Got help from April
+# collaborated with judy
 # used code from first morse code assessment
 # rewatched Daniels' morse code demo
 # did the morse code advanced on codewars
